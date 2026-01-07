@@ -3,50 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hành Trình Của Chúng Mình</title>
+    <title>The Dream Odyssey</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Thư viện GSAP để làm mượt chuyển động -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
-    <!-- Nhân vật chính (Đứng yên giữa màn hình) -->
     <div id="character">🐱</div>
 
-    <!-- Cảnh 1 -->
-    <section class="scene" id="scene1">
+    <!-- Section 1: Cánh đồng hoa -->
+    <section class="scene" id="meadow">
+        <div class="bg-layer layer" data-speed="0.2">☁️ ☁️ ☁️</div>
+        <div class="mid-layer layer" data-speed="0.5">⛰️ ⛰️</div>
         <div class="content">
-            <h1>Chào cậu...</h1>
-            <p>Cuộn chuột xuống để đi cùng tớ nhé!</p>
+            <h1 class="reveal">Khởi đầu...</h1>
         </div>
-        <div class="deco">🌱🌿🍀</div>
+        <div class="fore-layer layer" data-speed="1.2">🌿 🌸 🍀 🌸</div>
     </section>
 
-    <!-- Cảnh 2 -->
-    <section class="scene" id="scene2">
+    <!-- Section 2: Đại dương (Chuyển tông màu xanh sâu) -->
+    <section class="scene" id="ocean">
+        <div class="bg-layer layer" data-speed="0.1">🫧 🫧 🫧</div>
+        <div class="mid-layer layer" data-speed="0.4">🪸 🪸 🪸</div>
         <div class="content">
-            <h1>Lặn xuống biển sâu</h1>
-            <p>Nơi chỉ có tớ và cậu</p>
+            <h1 class="reveal">Sâu thẳm...</h1>
         </div>
-        <div class="deco fish">🐠</div>
+        <div class="fore-layer layer" data-speed="1.5">🐠 🐟 🐡</div>
     </section>
 
-    <!-- Cảnh 3 -->
-    <section class="scene" id="scene3">
+    <!-- Section 3: Vũ trụ -->
+    <section class="scene" id="space">
+        <div class="bg-layer layer" data-speed="0.05">✨ ⭐ ✨</div>
+        <div class="mid-layer layer" data-speed="0.3">🪐 🌌 ☄️</div>
         <div class="content">
-            <h1>Bay vào vũ trụ</h1>
-            <p>Vượt qua nghìn vạn vì sao</p>
+            <h1 class="reveal">Vô tận...</h1>
         </div>
-        <div class="deco star">⭐</div>
+        <div class="fore-layer layer" data-speed="2">🚀 🌠</div>
     </section>
 
-    <!-- Cảnh 4: Kết thúc -->
-    <section class="scene" id="scene4">
+    <!-- Section 4: Kết thúc -->
+    <section class="scene" id="end">
         <div class="final-card">
-            <h2>Hành trình kết thúc rồi...</h2>
-            <p>Nhưng mình đi ăn lẩu tiếp nhé? 🍲</p>
-            <button class="love-btn" onclick="alert('Hãy nhắn tin cho tớ ngay nhé!')">Đồng ý luôn!</button>
+            <h2>Hành trình của chúng mình...</h2>
+            <p>Vẫn còn dài lắm, đi tiếp nhé?</p>
+            <button class="btn" onclick="alert('Đã gửi thông báo tới anh xã!')">Chốt đơn! ❤️</button>
         </div>
     </section>
 
