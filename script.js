@@ -1,32 +1,58 @@
 gsap.registerPlugin(ScrollTrigger);
 
-// 1. Làm cho con mèo lắc lư cho sinh động
-gsap.to("#character", {
-    y: -20,
-    duration: 1,
-    repeat: -1,
-    yoyo: true,
-    ease: "power1.inOut"
+// Hiệu ứng Parallax cho từng Layer
+document.querySelectorAll('.scene').forEach((scene) => {
+    const layers = scene.querySelectorAll('.layer');
+    
+    layers.forEach(layer => {
+        const speed = layer.getAttribute('data-speed');
+        gsap.to(layer, {
+            y: -100 * speed, // Mỗi lớp di chuyển với tốc độ khác nhau khi cuộn
+            ease: "none",
+            scrollTrigger: {
+                trigger: scene,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+    });
 });
 
-// 2. Thay đổi icon con mèo theo từng cảnh
+// Chữ xuất hiện kiểu "Reveal" cực sang
+gsap.utils.toArray(".reveal").forEach((text) => {
+    gsap.from(text, {
+        y: 100,
+        opacity: 0,
+        duration: 1.5,
+        scrollTrigger: {
+            trigger: text,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+        }
+    });
+});
+
+// Nhân vật biến hình theo cảnh
+const char = document.getElementById("character");
+
 ScrollTrigger.create({
-    trigger: "#scene2",
+    trigger: "#ocean",
     start: "top center",
-    onEnter: () => document.getElementById("character").innerText = "🤿", // Đeo bình lặn
-    onLeaveBack: () => document.getElementById("character").innerText = "🐱"
+    onEnter: () => gsap.to(char, { textContent: "🤿", duration: 0.5, scale: 1.2 }),
+    onLeaveBack: () => gsap.to(char, { textContent: "🐱", duration: 0.5, scale: 1 })
 });
 
 ScrollTrigger.create({
-    trigger: "#scene3",
+    trigger: "#space",
     start: "top center",
-    onEnter: () => document.getElementById("character").innerText = "🚀", // Lên phi thuyền
-    onLeaveBack: () => document.getElementById("character").innerText = "🤿"
+    onEnter: () => gsap.to(char, { textContent: "🚀", duration: 0.5, rotation: 360 }),
+    onLeaveBack: () => gsap.to(char, { textContent: "🤿", duration: 0.5, rotation: 0 })
 });
 
 ScrollTrigger.create({
-    trigger: "#scene4",
+    trigger: "#end",
     start: "top center",
-    onEnter: () => document.getElementById("character").innerText = "💝", // Thành trái tim
-    onLeaveBack: () => document.getElementById("character").innerText = "🚀"
+    onEnter: () => gsap.to(char, { textContent: "💝", duration: 0.5, scale: 1.5 }),
+    onLeaveBack: () => gsap.to(char, { textContent: "🚀", duration: 0.5, scale: 1 })
 });
