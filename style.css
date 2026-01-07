@@ -19,11 +19,17 @@ body {
 
 #character {
     position: fixed;
-    top: 50%; left: 50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 80px;
-    z-index: 100;
-    filter: drop-shadow(0 0 20px rgba(255,255,255,0.5));
+    z-index: 1000;
+    pointer-events: none;
+}
+
+#chibi-img {
+    width: 180px; /* Bạn có thể tăng giảm số này tùy ý */
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2)); /* Tạo bóng đổ cho nhân vật */
 }
 
 /* Các lớp Layer Parallax */
