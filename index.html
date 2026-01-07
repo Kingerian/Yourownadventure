@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hành Trình Của Chúng Mình</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Thư viện GSAP để làm mượt chuyển động -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+    <!-- Nhân vật chính (Đứng yên giữa màn hình) -->
+    <div id="character">🐱</div>
+
+    <!-- Cảnh 1 -->
+    <section class="scene" id="scene1">
+        <div class="content">
+            <h1>Chào cậu...</h1>
+            <p>Cuộn chuột xuống để đi cùng tớ nhé!</p>
+        </div>
+        <div class="deco">🌱🌿🍀</div>
+    </section>
+
+    <!-- Cảnh 2 -->
+    <section class="scene" id="scene2">
+        <div class="content">
+            <h1>Lặn xuống biển sâu</h1>
+            <p>Nơi chỉ có tớ và cậu</p>
+        </div>
+        <div class="deco fish">🐠</div>
+    </section>
+
+    <!-- Cảnh 3 -->
+    <section class="scene" id="scene3">
+        <div class="content">
+            <h1>Bay vào vũ trụ</h1>
+            <p>Vượt qua nghìn vạn vì sao</p>
+        </div>
+        <div class="deco star">⭐</div>
+    </section>
+
+    <!-- Cảnh 4: Kết thúc -->
+    <section class="scene" id="scene4">
+        <div class="final-card">
+            <h2>Hành trình kết thúc rồi...</h2>
+            <p>Nhưng mình đi ăn lẩu tiếp nhé? 🍲</p>
+            <button class="love-btn" onclick="alert('Hãy nhắn tin cho tớ ngay nhé!')">Đồng ý luôn!</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
